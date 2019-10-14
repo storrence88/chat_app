@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ChatroomsController < ApplicationController
-  before_action :set_chatroom, only: [:show, :edit, :update, :destroy]
+  before_action :set_chatroom, only: %i[show edit update destroy]
 
   # GET /chatrooms
   # GET /chatrooms.json
@@ -62,6 +64,7 @@ class ChatroomsController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_chatroom
     @chatroom = Chatroom.find(params[:id])
