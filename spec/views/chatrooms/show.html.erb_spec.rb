@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "chatrooms/show", type: :view do
+RSpec.describe 'chatrooms/show', type: :view do
   before(:each) do
     @chatroom = assign(:chatroom, Chatroom.create!(
-      :name => "Name"
-    ))
+                                    name: 'Name'
+                                  ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Name/)
   end
