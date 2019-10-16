@@ -9,6 +9,6 @@
   <% end %>
 </div>
 
-<%= simple_form_for [@chatroom, Message.new] do |f| %>
+<%= simple_form_for [@chatroom, Message.new], html: { id: 'message-input' } do |f| %>
   <%= f.input :body, label: false, input_html: { rows: 1, autofocus: true } %>
 <% end %>
