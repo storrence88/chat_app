@@ -1,1 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
+
+.sidebar-fixed {
+  position: fixed;
+  top: 70px;
+  left: 0px;
+}
