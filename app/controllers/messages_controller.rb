@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   before_action :set_chatroom
 
   def create
-    message = @chatroom.message.new(message_params)
+    message = @chatroom.messages.new(message_params)
     message.user = current_user
 
     message.save
