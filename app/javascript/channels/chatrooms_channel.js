@@ -11,6 +11,6 @@ consumer.subscriptions.create("ChatroomsChannel", {
 
   received(data) {
     console.log(data);
-    $("[data-behavior='messages']").append(data.message)
+    $("[data-behavior='messages'][data-chatroom-id='#{}']").append(data.message)
   }
 });
