@@ -11,6 +11,11 @@ consumer.subscriptions.create("ChatroomsChannel", {
 
   received(data) {
     console.log(data);
-    $("[data-behavior='messages'][data-chatroom-id='#{}']").append(data.message)
+    const activeChatroom = $(`[data-behavior='messages'][data-chatroom-id=${data.chatroom_id}]`)
+    if (activeChatroom.length > 0) {
+      activeChatroom.append(data.message);
+    } else {
+      $(`[data-behavior='chatroom-link'][data-chatroom-id=${data.chatroom_id}]`).css('font-weight', 'bold')
+    }
   }
 });
